@@ -89,7 +89,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 className="w-full py-3 px-4 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
               >
                 <MessageSquare className="w-4 h-4" />
-                <span>Instant Connect on WhatsApp</span>
+                <span>Connect on WhatsApp</span>
               </button>
 
               <button
@@ -105,7 +105,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
             <div className="mb-6">
               <div className="flex items-center gap-2 text-yellow font-heading font-bold uppercase tracking-widest text-xs mb-1">
                 <span className="w-2 h-2 rounded-full bg-yellow"></span>
-                <span>Fast Deployment &amp; Booking</span>
+                <span>Direct Site Enquiries &amp; Booking</span>
               </div>
               <h3 className="font-heading uppercase font-black text-2xl sm:text-3xl text-white tracking-wide">
                 Get a Free Machine Quote
@@ -234,7 +234,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   type="submit"
                   className="w-full py-3 rounded-lg bg-yellow hover:bg-yellow-400 text-charcoal-900 font-heading font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-yellow-sm transition-all transform hover:-translate-y-0.5"
                 >
-                  <span>Submit Instant Enquiry</span>
+                  <span>Submit Machine Enquiry</span>
                   <ArrowRight className="w-4 h-4 stroke-[2.5]" />
                 </button>
 

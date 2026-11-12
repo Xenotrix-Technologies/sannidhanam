@@ -27,7 +27,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenQuoteModal }) => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-yellow/15 border border-yellow/40 text-yellow text-xs font-heading font-black uppercase tracking-widest mx-auto">
           <Clock className="w-3.5 h-3.5" />
-          <span>Operational Every Day • Immediate Machinery Dispatch</span>
+          <span>Operational 7 Days a Week • Direct Machine Fleet</span>
         </div>
 
         <h2 className="font-heading font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white max-w-4xl mx-auto leading-[0.98]">

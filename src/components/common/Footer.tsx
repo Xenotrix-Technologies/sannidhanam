@@ -4,7 +4,7 @@ import { COMPANY_INFO, SERVICES_DATA, BUILDING_MATERIALS } from '../../data/comp
 import { PageRoute } from '../../types';
 
 interface FooterProps {
-  onNavigate: (page: PageRoute) => void;
+  onNavigate: (page: PageRoute, targetSectionId?: string) => void;
   onOpenQuoteModal: (initialService?: string) => void;
 }
 
@@ -131,14 +131,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
               {SERVICES_DATA.slice(0, 6).map((service) => (
                 <li key={service.id}>
                   <button
-                    onClick={() => {
-                      onNavigate('services');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="hover:text-yellow text-charcoal-400 transition-colors text-left flex items-center gap-1.5"
+                    onClick={() => onNavigate('services', service.id)}
+                    className="hover:text-yellow text-charcoal-400 hover:translate-x-1 transition-all text-left flex items-center gap-1.5 group cursor-pointer w-full py-0.5"
+                    title={`View ${service.title} details`}
                   >
-                    <span className="w-1 h-1 rounded-full bg-yellow shrink-0"></span>
-                    <span className="truncate">{service.title}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-yellow shrink-0 group-hover:scale-125 transition-transform"></span>
+                    <span className="truncate group-hover:text-white transition-colors">{service.title}</span>
                   </button>
                 </li>
               ))}
@@ -150,12 +148,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
               </span>
               <div className="flex flex-wrap gap-1">
                 {BUILDING_MATERIALS.map((m) => (
-                  <span
+                  <button
                     key={m.id}
-                    className="text-[10px] px-2 py-0.5 rounded bg-charcoal-800 border border-charcoal-700 text-charcoal-300"
+                    onClick={() => onNavigate('services', m.id)}
+                    className="text-[10px] px-2 py-0.5 rounded bg-charcoal-800 hover:bg-yellow hover:text-charcoal-900 border border-charcoal-700 text-charcoal-300 transition-colors cursor-pointer font-medium"
+                    title={`View ${m.name} specifications`}
                   >
                     {m.name.split('/')[0].trim()}
-                  </span>
+                  </button>
                 ))}
               </div>
             </div>

@@ -47,7 +47,7 @@ export const FloatingActions: React.FC = () => {
       <div className="relative group pointer-events-auto">
         {/* Subtle Tooltip on Hover (Desktop) */}
         <div className="hidden sm:block absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-charcoal-900 text-white text-xs font-semibold py-1.5 px-3 rounded shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none border border-charcoal-700">
-          <span>Enquire on WhatsApp (Instant Reply)</span>
+          <span>Enquire on WhatsApp</span>
           <div className="absolute right-[-4px] top-1/2 -translate-y-1/2 w-2 h-2 bg-charcoal-900 rotate-45 border-t border-r border-charcoal-700"></div>
         </div>
 
@@ -55,16 +55,12 @@ export const FloatingActions: React.FC = () => {
           href={getWhatsAppUrl()}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2.5 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white px-4 py-3 sm:px-5 sm:py-3.5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 border-2 border-white/20"
+          className="flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white px-4 py-3 sm:px-5 sm:py-3.5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 border-2 border-white/20"
           aria-label="Chat on WhatsApp"
         >
-          <span className="relative flex h-3.5 w-3.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-200 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-white"></span>
-          </span>
-          <MessageCircle className="w-6 h-6 fill-current stroke-[1.5]" />
+          <MessageCircle className="w-5 h-5 fill-current stroke-[1.5]" />
           <span className="font-heading uppercase font-extrabold text-sm tracking-wider hidden xs:inline">
-            WhatsApp Booking
+            WhatsApp Enquiry
           </span>
         </a>
       </div>

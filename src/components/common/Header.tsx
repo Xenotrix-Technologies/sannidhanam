@@ -81,7 +81,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <span className="font-heading tracking-wider uppercase font-black text-xl sm:text-2xl text-white group-hover:text-yellow transition-colors leading-none">
                   Sannidhanam
                 </span>
-                <span className="inline-block w-2 h-2 rounded-full bg-yellow animate-pulse"></span>
+                <span className="inline-block w-2 h-2 rounded-full bg-yellow"></span>
               </div>
               <div className="text-[11px] sm:text-xs font-semibold tracking-widest uppercase text-yellow font-heading flex items-center gap-1.5 mt-0.5">
                 <span>Earth Movers</span>

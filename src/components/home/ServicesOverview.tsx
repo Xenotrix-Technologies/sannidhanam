@@ -5,7 +5,7 @@ import { PageRoute } from '../../types';
 import { getServiceWhatsAppUrl } from '../../utils/whatsapp';
 
 interface ServicesOverviewProps {
-  onNavigate: (page: PageRoute) => void;
+  onNavigate: (page: PageRoute, targetSectionId?: string) => void;
   onOpenQuoteModal: (serviceName?: string) => void;
 }
 
@@ -50,7 +50,10 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({
             >
               <div>
                 {/* Image Container with Badges */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-charcoal-800">
+                <div
+                  onClick={() => onNavigate('services', service.id)}
+                  className="relative aspect-[16/10] overflow-hidden bg-charcoal-800 cursor-pointer"
+                >
                   <img
                     src={service.image}
                     alt={service.title}
@@ -75,7 +78,10 @@ export const ServicesOverview: React.FC<ServicesOverviewProps> = ({
 
                 {/* Card Content */}
                 <div className="p-6 space-y-3">
-                  <h3 className="font-heading font-black uppercase text-xl text-charcoal-800 group-hover:text-yellow-600 transition-colors tracking-wide">
+                  <h3
+                    onClick={() => onNavigate('services', service.id)}
+                    className="font-heading font-black uppercase text-xl text-charcoal-800 group-hover:text-yellow-600 transition-colors tracking-wide cursor-pointer"
+                  >
                     {service.title}
                   </h3>
                   

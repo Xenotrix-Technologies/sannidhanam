@@ -90,13 +90,6 @@ export const MachineryPage: React.FC<MachineryPageProps> = ({ onOpenQuoteModal }
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/75 via-transparent to-transparent"></div>
 
-                      <div className="absolute top-4 left-4">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-600 text-white font-heading font-bold text-xs uppercase tracking-wider shadow-sm">
-                          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-                          <span>Ready for Deployment</span>
-                        </span>
-                      </div>
-
                       <div className="absolute bottom-4 left-4 text-white">
                         <span className="font-heading font-black text-xs text-yellow tracking-widest uppercase">
                           MODEL: {machine.model}
@@ -262,7 +255,7 @@ export const MachineryPage: React.FC<MachineryPageProps> = ({ onOpenQuoteModal }
                   7-Day Mobilization
                 </h4>
                 <p className="text-xs text-charcoal-300 mt-1">
-                  Immediate dispatch on Sundays and holidays so critical project milestones are met.
+                  Machinery operation scheduled on Sundays and holidays so critical project milestones are met.
                 </p>
               </div>
             </div>

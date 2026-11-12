@@ -28,17 +28,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, onOpenQuot
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl space-y-6 sm:space-y-7">
-          {/* Availability Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-charcoal-800/90 border border-yellow/40 backdrop-blur-md shadow-lg animate-fade-in">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow"></span>
-            </span>
-            <span className="font-heading uppercase tracking-wider text-xs sm:text-sm font-bold text-yellow">
-              Available 7 Days a Week • Instant Site Deployment
-            </span>
-          </div>
-
           {/* Strong Headline */}
           <div className="space-y-2">
             <h1 className="font-heading font-black tracking-tight text-4xl sm:text-6xl md:text-7xl lg:text-7xl uppercase text-white leading-[0.95] drop-shadow-md">
@@ -154,7 +143,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, onOpenQuot
             <div className="font-heading uppercase tracking-wider font-bold text-xs sm:text-sm text-white mt-0.5">
               Weekly Operation
             </div>
-            <p className="text-[11px] text-charcoal-400 mt-1">Zero downtime, weekend deployment</p>
+            <p className="text-[11px] text-charcoal-400 mt-1">Active site operations all week</p>
           </div>
         </div>
       </div>

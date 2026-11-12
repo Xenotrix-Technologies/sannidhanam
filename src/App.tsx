@@ -18,13 +18,32 @@ export const App: React.FC = () => {
   const [prefilledService, setPrefilledService] = useState<string | undefined>();
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
+  const scrollToSection = (sectionId: string) => {
+    setTimeout(() => {
+      const elem = document.getElementById(sectionId);
+      if (elem) {
+        elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 150);
+  };
+
   // Sync with window.location.hash for deep linking & back/forward support
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.replace('#/', '').replace('#', '');
+      const rawHash = window.location.hash;
+      if (!rawHash) return;
+
+      const clean = rawHash.replace(/^#\/?/, '');
+      const parts = clean.split(/[#/]/).filter(Boolean);
+      const routeCandidate = parts[0] as PageRoute;
+      const sectionId = parts[1];
+
       const validRoutes: PageRoute[] = ['home', 'about', 'services', 'machinery', 'projects', 'contact'];
-      if (validRoutes.includes(hash as PageRoute)) {
-        setCurrentPage(hash as PageRoute);
+      if (validRoutes.includes(routeCandidate)) {
+        setCurrentPage(routeCandidate);
+        if (sectionId) {
+          scrollToSection(sectionId);
+        }
       }
     };
 
@@ -33,10 +52,15 @@ export const App: React.FC = () => {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const handleNavigate = (page: PageRoute) => {
+  const handleNavigate = (page: PageRoute, targetSectionId?: string) => {
     setCurrentPage(page);
-    window.location.hash = `#/${page}`;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (targetSectionId) {
+      window.location.hash = `#/${page}#${targetSectionId}`;
+      scrollToSection(targetSectionId);
+    } else {
+      window.location.hash = `#/${page}`;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const handleOpenQuoteModal = (initialServiceOrMachine?: string) => {

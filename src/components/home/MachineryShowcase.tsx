@@ -30,14 +30,14 @@ export const MachineryShowcase: React.FC<MachineryShowcaseProps> = ({
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-2 text-yellow font-heading font-black uppercase tracking-widest text-xs">
               <span className="w-2.5 h-2.5 rounded bg-yellow"></span>
-              <span>Available Fleet for Hire</span>
+              <span>Machinery Fleet</span>
             </div>
             <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl uppercase text-white tracking-tight leading-[1.05]">
               Heavy Machinery &amp; Earthmovers
             </h2>
             <div className="w-16 h-1.5 bg-yellow rounded-full"></div>
             <p className="text-sm sm:text-base text-charcoal-300 mt-2">
-              Well-maintained, fuel-efficient machinery ready for immediate mobilization to your job site with licensed, experienced heavy equipment operators.
+              Well-maintained, fuel-efficient machinery operated by licensed, experienced heavy equipment operators for projects across Thrissur.
             </p>
           </div>
 
@@ -91,14 +91,6 @@ export const MachineryShowcase: React.FC<MachineryShowcaseProps> = ({
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-transparent to-transparent"></div>
-
-                  {/* Availability Badge */}
-                  <div className="absolute top-3 right-3">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-emerald-500/90 text-white font-heading font-bold text-[10px] uppercase tracking-wider backdrop-blur-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-                      <span>Available Now</span>
-                    </span>
-                  </div>
 
                   <div className="absolute bottom-3 left-3">
                     <span className="font-heading font-black text-xs text-yellow tracking-widest uppercase bg-charcoal-900/80 px-2 py-0.5 rounded">

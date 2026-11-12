@@ -21,6 +21,23 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuoteModal }) 
     setSelectedMaterialUnit((prev) => ({ ...prev, [matId]: unit }));
   };
 
+  React.useEffect(() => {
+    const rawHash = window.location.hash;
+    if (rawHash) {
+      const match = rawHash.match(/#([a-zA-Z0-9-]+)$/);
+      if (match && match[1] && match[1] !== 'services') {
+        const targetId = match[1];
+        const timer = setTimeout(() => {
+          const el = document.getElementById(targetId);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 120);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []);
+
   return (
     <div className="pt-20 sm:pt-24 bg-charcoal-50 text-charcoal-500">
       {/* Header Banner */}
@@ -61,7 +78,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuoteModal }) 
               <div
                 key={service.id}
                 id={service.id}
-                className="bg-white rounded-3xl overflow-hidden border border-charcoal-200 shadow-md hover:shadow-xl transition-all duration-300 p-6 sm:p-10"
+                className="scroll-mt-28 bg-white rounded-3xl overflow-hidden border border-charcoal-200 shadow-md hover:shadow-xl transition-all duration-300 p-6 sm:p-10 target:ring-4 target:ring-yellow/80 target:border-yellow"
               >
                 <div className={`grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center ${isReversed ? 'lg:flex-row-reverse' : ''}`}>
                   {/* Image Column (5 cols) */}
@@ -178,7 +195,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuoteModal }) 
       </section>
 
       {/* Building Materials Supply Deep Dive Section */}
-      <section className="py-20 bg-charcoal-900 text-white relative">
+      <section id="building-materials" className="py-20 bg-charcoal-900 text-white relative scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-2 max-w-2xl">
@@ -211,7 +228,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuoteModal }) 
               return (
                 <div
                   key={mat.id}
-                  className="group bg-charcoal-800 rounded-2xl overflow-hidden border border-charcoal-700 hover:border-yellow transition-all duration-300 flex flex-col justify-between hover:shadow-2xl"
+                  id={mat.id}
+                  className="scroll-mt-28 group bg-charcoal-800 rounded-2xl overflow-hidden border border-charcoal-700 hover:border-yellow transition-all duration-300 flex flex-col justify-between hover:shadow-2xl target:ring-4 target:ring-yellow/80 target:border-yellow"
                 >
                   <div>
                     {/* Real Material Photographic Preview */}
