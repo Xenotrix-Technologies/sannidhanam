@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Barlow Condensed', 'Outfit', sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Custom Scrollbar for Sleek Industrial Look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171A1D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #33383D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFB800;
+}
+
+/* Hazard Stripe Decorative Border Class */
+.hazard-stripe {
+  background: repeating-linear-gradient(
+    -45deg,
+    #FFB800,
+    #FFB800 12px,
+    #171A1D 12px,
+    #171A1D 24px
+  );
+}
+
